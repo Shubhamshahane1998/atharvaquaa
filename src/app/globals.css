@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Tokens sampled directly from the Figma export. */
+@theme {
+  --color-brand-50: #f0f9ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #4f8ef0;
+  --color-brand-500: #2463e9;
+  --color-brand-600: #025ee5;
+  --color-brand-700: #0b4cc0;
+  --color-brand-800: #0038ad;
+  --color-brand-900: #0b2b57;
+
+  /* Page furniture */
+  --color-ink: #0b2b57;
+  --color-muted: #55657f;
+  --color-surface: #f0f9ff;
+  --color-footer: #0038ad;
+  --color-whatsapp: #00b159;
+  /* Figma token for the outlined WhatsApp button. */
+  --color-whatsapp-outline: #47c756;
+  --color-mint: #28b14e;
+  --color-sky: #2b6fff;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Must track the sticky header height, or anchored sections land under it. */
+  scroll-padding-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The dark "About" band: a blue radial bloom fading to navy at the edges. */
+.about-bloom {
+  background:
+    radial-gradient(90% 120% at 50% 45%, #1e49a8 0%, #18316a 45%, #16284b 70%, #131c33 100%);
+}
+
+/* Horizontal scroll-snap carousel, no scrollbar chrome. */
+.snap-row {
+  scrollbar-width: none;
+}
+.snap-row::-webkit-scrollbar {
+  display: none;
+}
+
